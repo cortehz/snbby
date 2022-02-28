@@ -3,7 +3,7 @@ import { Form, Formik, FormikHelpers } from "formik";
 import { Input } from "../form-fields/Input";
 import * as Yup from "yup";
 import { formValidator } from "../../utils/formValidator";
-import { Button, Flex, FormErrorMessage, Text } from "@chakra-ui/react";
+import { Button, Flex, Text } from "@chakra-ui/react";
 import CustomInput from "../form-fields/PhoneInput";
 import Success from "./Success";
 import { FormContext } from "../../store/FormContext";
@@ -36,7 +36,7 @@ const RequestForm: React.FunctionComponent<RequestFormProps> = () => {
       const data = await res.json();
       setCountryCode(data.country_code.toLowerCase());
     } catch (error) {
-      return;
+      return error;
     }
   };
 
@@ -114,6 +114,7 @@ const RequestForm: React.FunctionComponent<RequestFormProps> = () => {
                   countryCode={countryCode}
                 />
                 <Button
+                  aria-label="submit"
                   type="submit"
                   colorScheme={"blue"}
                   px={12}

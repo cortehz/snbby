@@ -29,6 +29,7 @@ const MobileNav: React.FunctionComponent<DesktopNavProps> = () => {
 
       <Box ref={navRef}>
         <Button
+          aria-label="show navigation"
           onClick={() => {
             setShowNav(!showNav);
           }}

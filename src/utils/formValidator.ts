@@ -17,7 +17,7 @@ export const formValidator = {
     .required(errorMessages?.required),
   stringCompany: Yup.string()
     .trim()
-    .matches(/^[a-zA-Z]*$/, errorMessages?.companyString)
+    .matches(/^\D+$/, errorMessages?.companyString)
     .max(80, errorMessages?.companyMax)
     .required(errorMessages?.required),
   email: Yup.string()

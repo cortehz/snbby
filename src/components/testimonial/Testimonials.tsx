@@ -58,6 +58,7 @@ const Testimonials: React.FunctionComponent<TestimonialsProps> = () => {
               height={"40px"}
               position={["absolute", "relative"]}
               alignSelf={["flex-end", "flex-end", "center"]}
+              aria-label="previous testimonial"
             >
               <ArrowBackwardIcon width={"24px"} height={"24px"} />
             </Button>
@@ -67,6 +68,7 @@ const Testimonials: React.FunctionComponent<TestimonialsProps> = () => {
                 width={"8rem"}
                 height={"2rem"}
                 alignSelf={"center"}
+                alt={`${current.name} logo`}
                 my={8}
               />
               <Text as={"q"} fontStyle={"italic"} textAlign={"start"} px={4}>
@@ -111,6 +113,7 @@ const Testimonials: React.FunctionComponent<TestimonialsProps> = () => {
               position={["absolute", "relative"]}
               right={"0"}
               alignSelf={["flex-end", "flex-end", "center"]}
+              aria-label="next testimonial"
             >
               <ArrowForwardIcon width={"24px"} height={"24px"} />
             </Button>
@@ -122,8 +125,8 @@ const Testimonials: React.FunctionComponent<TestimonialsProps> = () => {
                 <Image
                   src={company.logo}
                   alt={`Logo of ${company.name} showing testimonial.`}
-                  maxWidth="100%"
-                  height={"35px"}
+                  width={"auto"}
+                  height={"40px"}
                   margin="auto"
                   alignSelf="center"
                 />
