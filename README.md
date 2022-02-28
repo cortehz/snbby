@@ -3,7 +3,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
 and [ChakraUI](https://chakra-ui.com/).
 
-Form validation with [Formik](https://formik.org/) and [Yup](https://www.npmjs.com/package/yup)
+- State Management with Context
+- Form validation with [Formik](https://formik.org/) and [Yup](https://www.npmjs.com/package/yup)
+- Phone number validation with [React phone Input 2](https://www.npmjs.com/package/react-phone-input-2)
 
 ## Available Scripts
 
