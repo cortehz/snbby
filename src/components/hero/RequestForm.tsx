@@ -75,14 +75,22 @@ const RequestForm: React.FunctionComponent<RequestFormProps> = () => {
             <Flex
               flexDir={"column"}
               bg={"white"}
-              p={12}
+              p={[8, 12]}
               borderRadius={"md"}
               color={"snubesGray"}
             >
-              <Text fontWeight={"bold"} fontSize={"2xl"} textAlign="center">
+              <Text
+                fontWeight={"bold"}
+                fontSize={"2xl"}
+                textAlign={["start", "center"]}
+              >
                 Find inbound call centers for your company
               </Text>
-              <Text fontSize={"sm"} textAlign="center" color={"snubesGray"}>
+              <Text
+                fontSize={"sm"}
+                textAlign={["start", "center"]}
+                color={"snubesGray"}
+              >
                 Use our AI and Big Data driven call center sourcing solution.
               </Text>
               <Flex flexDir={"column"} gap={4} justifyContent={"center"} mt={4}>

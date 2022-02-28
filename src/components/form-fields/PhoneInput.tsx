@@ -33,7 +33,7 @@ const CustomInput: React.FC<PhoneProps> = ({
   };
   return (
     <FormControl
-      gap={4}
+      gap={[1, 4]}
       isInvalid={touched && !!error}
       display={"flex"}
       id={name}

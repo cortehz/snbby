@@ -34,7 +34,7 @@ export const Input: React.FC<InputFieldProps> = ({
         mb={0}
         display={"flex"}
         alignItems={isInvalid ? "flex-start" : "center"}
-        gap={4}
+        gap={[1, 4]}
         marginInlineEnd={0}
         flexDir={["column", "row"]}
       >
