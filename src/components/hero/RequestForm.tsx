@@ -86,7 +86,12 @@ const RequestForm: React.FunctionComponent<RequestFormProps> = () => {
                 Use our AI and Big Data driven call center sourcing solution.
               </Text>
               <Flex flexDir={"column"} gap={4} justifyContent={"center"} mt={4}>
-                <Input name="company" placeholder="Company" label="Company" />
+                <Input
+                  name="company"
+                  placeholder="Company"
+                  label="Company"
+                  type={"text"}
+                />
                 <Input name="name" placeholder="Full name" label="Name" />
                 <Input
                   name="email"

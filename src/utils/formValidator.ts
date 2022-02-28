@@ -7,6 +7,7 @@ export const errorMessages = {
   nameMax: "Name cannot be more than 50 characters.",
   companyMax: "Company name must not be more than 80 characters.",
   minNumb: "Phone number cannot be less than 10.",
+  companyString: "Company name must be a letter.",
 };
 
 export const formValidator = {
@@ -16,6 +17,7 @@ export const formValidator = {
     .required(errorMessages?.required),
   stringCompany: Yup.string()
     .trim()
+    .matches(/^[a-zA-Z]*$/, errorMessages?.companyString)
     .max(80, errorMessages?.companyMax)
     .required(errorMessages?.required),
   email: Yup.string()
