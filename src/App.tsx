@@ -1,25 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useMemo } from "react";
+
+import { Navigation } from "./components/navigation";
+import { Flex, Box } from "@chakra-ui/react";
+import { Hero } from "./components/hero";
+import About from "./components/About";
+import AboutUs from "./components/AboutUs";
+import Testimonials from "./components/testimonial/Testimonials";
+import Footer from "./components/Footer";
+import { FormContext } from "./store/FormContext";
 
 function App() {
+  const [form, setForm] = useState(null);
+
+  const value = useMemo(() => ({ form, setForm }), [form, setForm]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Box bg={"grayBg"}>
+      <Flex as={"header"} flexDir={"column"}>
+        <Navigation />
+        <FormContext.Provider value={value}>
+          <Hero />
+        </FormContext.Provider>
+      </Flex>
+      <Box as="main">
+        <About />
+        <AboutUs />
+      </Box>
+
+      <Box as="section">
+        <Testimonials />
+      </Box>
+      <Footer />
+    </Box>
   );
 }
 
