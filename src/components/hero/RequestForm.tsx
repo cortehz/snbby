@@ -3,7 +3,7 @@ import { Form, Formik, FormikHelpers } from "formik";
 import { Input } from "../form-fields/Input";
 import * as Yup from "yup";
 import { formValidator } from "../../utils/formValidator";
-import { Button, Flex, Text } from "@chakra-ui/react";
+import { Button, Flex, FormErrorMessage, Text } from "@chakra-ui/react";
 import CustomInput from "../form-fields/PhoneInput";
 import Success from "./Success";
 import { FormContext } from "../../store/FormContext";
@@ -26,7 +26,7 @@ export interface FormValues {
 const RequestForm: React.FunctionComponent<RequestFormProps> = () => {
   const { form, setForm } = useContext(FormContext);
   const [countryCode, setCountryCode] = useState("");
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
 
   //get user country code from browser and set it to state
   //if unavailable use default country code in phone input
@@ -48,6 +48,7 @@ const RequestForm: React.FunctionComponent<RequestFormProps> = () => {
       //make API call to submit form data
       //submited status and form values are set to state
       setForm({ company, name, phone, email });
+      setError(false);
       resetForm(); //reset form after submit
     } catch (error) {
       setError(true);
@@ -122,6 +123,11 @@ const RequestForm: React.FunctionComponent<RequestFormProps> = () => {
                   Get informed
                 </Button>
               </Flex>
+              {error && (
+                <Text textAlign={"center"} color={"red"}>
+                  An error occured submitted your request
+                </Text>
+              )}
             </Flex>
           </Form>
         </Formik>
