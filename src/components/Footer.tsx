@@ -1,80 +1,80 @@
-import { Flex, Image, Link, List, ListItem, Text } from "@chakra-ui/react";
-import Wrapper from "./layout/Wrapper";
-import bestTag from "../assets/img/best-footer.jpeg";
-import { FacebookIcon, LinkedInIcon, TwitterIcon } from "../icons";
+import { Flex, Image, Link, List, ListItem, Text } from '@chakra-ui/react';
+import Wrapper from './layout/Wrapper';
+import bestTag from '../assets/img/best-footer.jpeg';
+import { FacebookIcon, LinkedInIcon, TwitterIcon } from '../icons';
 
 interface FooterProps {}
 
 const Footer: React.FunctionComponent<FooterProps> = () => {
   const contactItems: Array<{ title: string; link?: string }> = [
     {
-      title: "support@snubes.com",
-      link: "mailto:support@snubes.com",
+      title: 'support@example.com',
+      link: 'mailto:support@example.com',
     },
     {
-      title: "+49 (0) 305 5645327",
-      link: "#",
+      title: '+49 (0) 305 5645327',
+      link: '#',
     },
   ];
 
   const socialItems: Array<{ title: string; link: string; icon: any }> = [
     {
-      title: "Facebook",
-      link: "https://www.facebook.com/SnubesGlobal/",
+      title: 'Facebook',
+      link: 'https://www.facebook.com/',
       icon: <FacebookIcon width={6} height={6} />,
     },
     {
-      title: "Twitter",
-      link: "https://twitter.com/SnubesGlobal",
+      title: 'Twitter',
+      link: 'https://twitter.com/',
       icon: <TwitterIcon width={6} height={6} />,
     },
     {
-      title: "LinkedIn",
-      link: "https://www.linkedin.com/company/snubes/",
+      title: 'LinkedIn',
+      link: 'https://www.linkedin.com/',
       icon: <LinkedInIcon width={6} height={6} />,
     },
   ];
   return (
-    <Flex as={"footer"} bg={"snubesGray"} pt={16} flexDir={"column"}>
+    <Flex as={'footer'} bg={'snubesGray'} pt={16} flexDir={'column'}>
       <Wrapper>
         <Flex
-          justifyContent={"space-around"}
-          alignItems={"center"}
-          color={"white"}
-          flexWrap={"wrap"}
-          flexDir={["column", "row", "row"]}
+          justifyContent={'space-around'}
+          alignItems={'center'}
+          color={'white'}
+          flexWrap={'wrap'}
+          flexDir={['column', 'row', 'row']}
           pb={16}
         >
-          <Image src={bestTag} alt="best tag" width={100} height={100} my={4} />
-          <List display={"flex"} flexDir="column" gap={4} my={4}>
-            {["About us", "Become a Partner", "FAQ"].map((item, id) => (
-              <ListItem key={`${item}.${id}`} textAlign={["center", "start"]}>
-                <Link href="#"> {item}</Link>
+          <Image src={bestTag} alt='best tag' width={100} height={100} my={4} />
+          <List display={'flex'} flexDir='column' gap={4} my={4}>
+            {['About us', 'Become a Partner', 'FAQ'].map((item, id) => (
+              <ListItem key={`${item}.${id}`} textAlign={['center', 'start']}>
+                <Link href='#'> {item}</Link>
               </ListItem>
             ))}
           </List>
 
-          <List display={"flex"} flexDir="column" gap={4} my={4}>
-            {["Imprint", "Terms & Conditions", "Privacy Policy"].map(
+          <List display={'flex'} flexDir='column' gap={4} my={4}>
+            {['Imprint', 'Terms & Conditions', 'Privacy Policy'].map(
               (item, id) => (
-                <ListItem key={`${item}.${id}`} textAlign={["center", "start"]}>
-                  <Link href="#">{item}</Link>
+                <ListItem key={`${item}.${id}`} textAlign={['center', 'start']}>
+                  <Link href='#'>{item}</Link>
                 </ListItem>
               )
             )}
           </List>
-          <Flex flexDir={"column"} gap={4} my={4}>
-            <List display={"flex"} flexDir="column" gap={4}>
+          <Flex flexDir={'column'} gap={4} my={4}>
+            <List display={'flex'} flexDir='column' gap={4}>
               {contactItems.map((item, id) => (
-                <ListItem key={`${item}.${id}`} textAlign={["center", "start"]}>
+                <ListItem key={`${item}.${id}`} textAlign={['center', 'start']}>
                   <Link href={item.link}>{item.title}</Link>
                 </ListItem>
               ))}
             </List>
             <Flex
-              alignItems={"center"}
+              alignItems={'center'}
               gap={4}
-              justifyContent={["center", "flex-start"]}
+              justifyContent={['center', 'flex-start']}
             >
               {socialItems.map((item, id) => (
                 <Link href={item.link} key={`${item.title}.${id}`}>
@@ -85,9 +85,9 @@ const Footer: React.FunctionComponent<FooterProps> = () => {
           </Flex>
         </Flex>
       </Wrapper>
-      <Flex bg={"grayBg"} px={4} py={4} justifyContent={"center"}>
-        <Text fontSize={"md"} textAlign={"center"}>
-          © {new Date().getFullYear()} Snubes GmbH All Rights Reserved.
+      <Flex bg={'grayBg'} px={4} py={4} justifyContent={'center'}>
+        <Text fontSize={'md'} textAlign={'center'}>
+          © {new Date().getFullYear()} Callcenter GmbH All Rights Reserved.
         </Text>
       </Flex>
     </Flex>
